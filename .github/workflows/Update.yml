@@ -1,1 +1,56 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
+name: Update information
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+#   대략 5분 딜레이 생겼음. 예상 시각 09시45분
+#   딜레이 한시간 정도 생겼음 ㅡㅡ... 예상 시각 08시40분 -> 이번엔 또 딜레이 없네..근데 날짜때문에..
+    - cron: '0 0 * * *'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    env:
+      mail_pass: ${{ secrets.MAIL_PASS }}
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+
+    steps:
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - uses: actions/checkout@v2
+
+    - name: npm update
+      run: npm update --save
+
+    - name: Run script
+      run: |
+        cd util
+        node webScraping.js
+      
+    - name: Add variable for Date
+      run: |
+        echo "current_date=$(date +'%Y-%m-%d %H:%M:%S')" >> $GITHUB_ENV
+        
+    - name: Commit & Push
+      uses: Andro999b/push@v1.3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
+        message: Update ${{ env.current_date }}
+
+    - name: Test for Sending E-mail
+      run: |
+        cd util
+        node mailManager.js

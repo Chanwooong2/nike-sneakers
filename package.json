@@ -1,0 +1,24 @@
+{
+	"name": "nike-sneakers",
+	"description": "Get releasing information of Nike sneakers & Inform us",
+	"keywords": [
+		"nike",
+		"sneakers",
+		"alert",
+		"email",
+		"telegram"
+	],
+	"author": "Chanwooong2",
+	"dependencies": {
+		"axios": "*",
+		"cheerio": "*",
+		"nodemailer": "*",
+		"nodemailer-smtp-transport": "*",
+		"node-cron": "*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:Chanwooong2/nike-sneakers.git"
+	},
+	"version": "1.1.0"
+}
