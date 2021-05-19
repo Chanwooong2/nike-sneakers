@@ -56,7 +56,7 @@ function getMailData(){
     let mailHtml = "";
 
     mailHtml += "<div style=\"width: 100%;\">";
-    mailHtml += "	<div style=\"text-align: center;font-size: 1.3em;font-weight: bold;padding:10px;cursor:pointer;border-radius: 30px;margin: 5px auto;background: #f1b848;width: 260px;position: absolute;left: calc(50% - 130px);\"><a style=\"text-decoration: none;color:#291a60;\" href=\"https://chanwooong2.github.io/nike-sneakers/nike-sneakers.html\">Go Chanwoong's<br>👟Sneakers Page👟</a></div>";
+    mailHtml += "	<div style=\"text-align: center;font-size: 1.3em;font-weight: bold;padding:10px;cursor:pointer;border-radius: 30px;margin: 5px auto;background: #f1b848;width: 260px;position: absolute;left: calc(50% - 130px);\"><a style=\"text-decoration: none;color:#291a60;\" href=\"https://chanwooong2.github.io/nike-sneakers/nike-sneakers\">Go Chanwoong's<br>👟Sneakers Page👟</a></div>";
     mailHtml += "	<div style=\"text-align: center;font-size:2em;font-weight: bold;padding:10px;cursor:pointer;border-radius: 30px;margin: 5px auto;background: #000;color: #fff;width: 260px;line-height: 40px;position: absolute;left: calc(50% - 130px);top: 95px;\"><a style=\"text-decoration: none;color:#fff;\" href=\"https://www.nike.com/kr/launch/?type=upcoming&activeDate=date-filter:AFTER_DATE\">Go Nike.com</a></div>";
     mailHtml += "</div>";
 
