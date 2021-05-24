@@ -12,9 +12,9 @@
 	"dependencies": {
 		"axios": "*",
 		"cheerio": "*",
-		"nodemailer": "*",
-		"nodemailer-smtp-transport": "*",
-		"node-cron": "*"
+		"node-cron": "*",
+		"nodemailer": "^6.6.1",
+		"nodemailer-smtp-transport": "*"
 	},
 	"repository": {
 		"type": "git",
