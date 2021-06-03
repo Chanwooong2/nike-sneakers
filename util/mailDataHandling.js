@@ -22,11 +22,21 @@ function getSneakersJsonData(){
 // 오늘 드로우 대상 리스트
 function getTodaySneakersList(sneakers){
     const date = new Date();
-    const today = date.getMonth()+1+"/"+date.getDate();
+    let today;
+    
+    // Issue : GitHub Actions의 스케쥴러가 제 시간에 돌지 않고 0 ~ 2시간30분 정도 딜레이 발생하는 현상
+    // '0 22 * * *' 로 설정 > 한국시간 기준 오전 7시 예정
+    // 세계시간 기준 딜레이 포함해서 22, 23시에 실행 시 날짜 하루 추가
+    if(date.getHours() > 21){
+        // 9시 이전에 돌았을 경우 (날짜가 하루 전날이라 안걸렷을 것)
+        today = date.getMonth()+1+"/"+(date.getDate()+1);
+    }else{
+        // 10시 이후에 돌았을 경우 (10시에 드로우하는 것이 안 걸림)
+        today = date.getMonth()+1+"/"+date.getDate();
+    }
     const todaySneakers = sneakers.filter(item => item.drawDate === today);
 
     console.log(today);
-    // console.log(todaySneakers);
     return todaySneakers;
 }
 
