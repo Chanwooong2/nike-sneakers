@@ -10,7 +10,7 @@
 	],
 	"author": "Chanwooong2",
 	"dependencies": {
-		"axios": "^0.21.3",
+		"axios": "^0.21.4",
 		"cheerio": "*",
 		"node-cron": "*",
 		"nodemailer": "^6.6.3",
