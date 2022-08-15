@@ -12,7 +12,7 @@
 	"dependencies": {
 		"axios": "^0.21.4",
 		"cheerio": "*",
-		"node-cron": "^3.0.0",
+		"node-cron": "^3.0.2",
 		"nodemailer": "^6.7.8",
 		"nodemailer-smtp-transport": "*",
 		"uuid": "8.3.2"
